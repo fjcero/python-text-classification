@@ -35,8 +35,14 @@ class TestSum(unittest.TestCase):
         ), "Should be"
 
     def test_process_input(self):
-        res = process_input("This is Sparta!!!")
-        print(res)
+        with open("./texts/example.txt", "r", encoding="utf-8") as f:
+            res = process_input(f)
+
+        assert res.most_common(3) == [
+            ("this is sparta", 3),
+            ("no this is", 2),
+            ("he whom it", 1),
+        ]
 
 
 if __name__ == "__main__":
