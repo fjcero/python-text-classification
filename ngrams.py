@@ -12,7 +12,10 @@ def generate_trigrams(words: list):
 
 
 def get_words(text):
-    """Remove punctuation, normalize spaces, and convert to lowercase"""
+    """
+    Remove punctuation, normalize spaces, convert to lowercase, and tokenize.
+    Whitespaces are ignored.
+    """
     text = re.sub(r"[^\w\s]", "", text)  # Remove punctuation
     text = re.sub(r"\s+", " ", text.strip())  # Normalize whitespace
     text = text.lower()  # Lowercase
